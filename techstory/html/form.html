@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input:focus {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="login.html" method="get">
+      <!--method에 들어갈 수 있는것들 post gat put patch delete
+        그런데 post get만 사용할수있는 브라우저가 있어서 보통은 두가지만 씀-->
+      사용자 ID
+      <input
+        name="id"
+        type="text"
+        placeholder="아이디를 입력하세요"
+        value=""
+        size="15"
+      />
+      <br />
+      비밀번호 <input name="pwd" type="password" size="15" />
+      <br />
+      <!--제출버튼-->
+      <input type="submit" />
+      <!--http://127.0.0.1:5500/techstory/form.html?id=%E3%84%B1%E3%84%B1%E3%84%B1%E3%84%B1&pwd=1111#-->
+    </form>
+  </body>
+</html>

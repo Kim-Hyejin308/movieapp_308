@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let 이름 = "hello";
+      console.log(이름); // 출력
+
+      let 함수 = function () {
+        console.log("익명함수입니다"); // 출력
+      };
+      console.log(함수); // 출력
+      함수();
+
+      let add = function (n1, n2) {
+        console.log(n1 + n2); // 출력
+        return n1 + n2;
+      };
+
+      let add1 = (n1, n2) => {
+        console.log(n1 + n2);
+        return n1 + n2;
+      };
+      console.log(add); // 출력
+      add(10, 20);
+
+      let doNoting = () => {};
+      doNoting();
+
+      let one = (n1) => {
+        console.log(n1); // 출력
+      };
+      one(10);
+    </script>
+    <script>
+      //2~9까지 숫자를 하나 입력 받아 구구단을 출력
+      /*function gugudan(dan) {
+        if (num >= 2 && num <= 9) {
+          console.log(
+            1 * num,
+            2 * num,
+            3 * num,
+            4 * num,
+            5 * num,
+            6 * num,
+            7 * num,
+            8 * num,
+            9 * num,
+          );
+        } else {
+          console.log("2~9 사이 숫자를 입력하세요!");
+        }
+      }*/
+      //숫자가 아니거나 2보다 작고 9보다 크면 종료
+
+      let num = prompt();
+      if (isNaN(num) || num <= 2 || num >= 9) {
+        console.log("2~9 사이 숫자를 입력하세요!");
+      } else {
+        console.log(
+          1 * num,
+          2 * num,
+          3 * num,
+          4 * num,
+          5 * num,
+          6 * num,
+          7 * num,
+          8 * num,
+          9 * num,
+        );
+      }
+      //   gugudan(num);
+    </script>
+  </body>
+</html>

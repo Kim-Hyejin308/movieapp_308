@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" name="order">
+      <input type="text" name="product" value="휴대폰" />
+      <input type="text" name="qty" value="3" />
+    </form>
+
+    <form action="" name="self">
+      <input type="text" name="product" value="홍길동" />
+      <input type="text" name="age" value="20" />
+    </form>
+
+    <script>
+      console.log(document.order.product.value, document.order.qty.value);
+      console.log(
+        document.forms["order"].elements["product"].value,
+        document.forms[1].elements[1].value,
+      );
+    </script>
+  </body>
+</html>

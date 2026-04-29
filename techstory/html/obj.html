@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let account = {
+        owner: "홍길동",
+        account_no: "1111",
+        balanse: 10000,
+        widthdraw: () => {
+          console.log("출금");
+        },
+        deposit: () => {
+          console.log("입금"); //deposit이 가지고 있는 "입금"출력
+        },
+        inquiry: () => {
+          console.log("조회");
+        },
+      };
+      console.log(account.owner); //owner가 가지고 있는 "홍길동"출력
+      account.deposit(); //deposit이 가지고 있는 "입금"출력
+      console.log(account.deposit); //수식 자체를 출력
+      console.log(account); //account가 가지고 있는 모든 값 출력
+    </script>
+  </body>
+</html>

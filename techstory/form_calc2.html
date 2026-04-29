@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>체크박스 누르면 덧셈 해주기</title>
+    <style>
+      input:focus {
+        background-color: aqua;
+      }
+    </style>
+    <script>
+      function calc(obj) {
+        const res = document.getElementById("res");
+
+        // res.value = parseInt(res.value) + parseInt(obj.value);
+        /*체크 해제 할때도 덧셈이 되기 때문에 그것을 막기 위한 수식 추가*/
+        let current = parseInt(res.value);
+        let value = parseInt(obj.value);
+
+        if (obj.checked) {
+          current += value; // 체크하면 더하기
+        } else {
+          current -= value; // 해제하면 빼기
+        }
+        res.value = current;
+      }
+    </script>
+  </head>
+  <body>
+    <form action="#" method="get" onsubmit="calc(event)">
+      <input type="checkBox" id="chec1" value="1000" onclick="calc(this)" />
+      1000원
+      <input type="checkBox" id="chec2" value="2000" onclick="calc(this)" />
+      2000원
+      <input type="checkBox" id="chec3" value="3000" onclick="calc(this)" />
+      3000원
+      <input type="checkBox" id="chec4" value="4000" onclick="calc(this)" />
+      4000원
+      <br />
+      결과 <input type="text" name="res" id="res" value="0" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.7.2/prop-types.min.js"></script>
+  </head>
+  <body>
+    <!--구조분해 할당 방식으로 작성함-->
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      function Btn({ text, color, textColor, onClick, big = 14 }) {
+        console.log(`${text} button is rendering`);
+        return (
+          <button
+            style={{
+              backgroundColor: color,
+              color: textColor,
+              padding: "5px 10px",
+              borderRadius: 10,
+              fontSize: big ? 24 : 16,
+            }}
+            onClick={onClick}
+          >
+            {text}
+          </button>
+        );
+      }
+      Btn.propTypes = {
+        big: PropTypes.number.isRequired,
+        text: PropTypes.string,
+      };
+      const MemoBtn = React.memo(Btn);
+      const App = () => {
+        const [any, setAny] = React.useState(0);
+        console.log("App is rendering");
+        const onClick = () => {
+          console.log("Button clicked.");
+          setAny(any + 1);
+        };
+        return (
+          <>
+            <h1>{any}</h1>
+            <MemoBtn
+              text="Save"
+              big={16}
+              color="indigo"
+              textColor="white"
+              onClick={onClick}
+            />
+            <MemoBtn
+              text="Confirm"
+              color="yellow"
+              textColor="indigo"
+              onClick={onClick}
+            />
+            <MemoBtn
+              text="Delete"
+              big={17}
+              color="red"
+              textColor="white"
+              onClick={onClick}
+            />
+            <MemoBtn
+              text="Cancel"
+              big={15}
+              color="gray"
+              textColor="red"
+              onClick={onClick}
+            />
+          </>
+        );
+      };
+
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

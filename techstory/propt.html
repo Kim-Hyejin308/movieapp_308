@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>입력 받기</h3>
+    <hr />
+    <script>
+      let name = prompt("이름을 입력하세요", "홍길동");
+      if (name == null) {
+        console.log("이름 안씀");
+      } else {
+        console.log(name + "님 반갑습니다");
+      }
+      console.log(name);
+
+      let answer = confirm("삭제하실?");
+      if (answer == true) {
+        console.log("삭제");
+      } else {
+        console.log("삭제 노");
+      }
+    </script>
+  </body>
+</html>

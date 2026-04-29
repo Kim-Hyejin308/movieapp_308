@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/techstory/html/login.html" method="get" name="select">
+      <input type="radio" name="fruits" value="1" />바나나 
+      <input type="radio" name="fruits" value="2" />망고
+      <input type="radio" name="fruits" value="3" />사과
+      <img id="img" src="" alt="" width="100px">
+
+      <br />
+
+
+    <form action="/techstory/html/login.html" method="get" name="select">
+      <input type="radio" name="city" value="서울" />서울
+      <input type="radio" name="city" value="울산" checked />울산
+      <input type="radio" name="city" value="남양주" />남양주
+
+      <br />
+
+      <input type="checkbox" name="berry" value="7000" checked onclick="calc()"/>딸기
+      <input type="checkbox" name="watermelon" value="27000"/>수박
+      <input type="checkbox" name="apple" value="15000" />사과
+      <input id="price" type="text" value="0">
+      
+      <br />
+    
+      <select name="fruit">
+        <option value="./image/banana.jpg">바나나</option>
+        <option value="./image/mango.jpg" selected="true">망고</option>
+        <option value="./image/apple.jpg">사과</option>
+      </select>
+              <img id="img1" src="" alt="" width="100px">
+
+      <br />
+      <input type="submit" />
+    </form>
+    <script>
+      console.log(document.forms["select"].elements["city"]);
+      let cities = document.forms["select"].elements["city"];
+      cities[1].checked = true;
+      for (const city of cities) {
+        if (city.checked == true) {
+          console.log(city.value, city.innerHTML);
+        }
+        console.log(city.checked);
+      }
+
+
+     let fruits = document.forms["select"].elements["fruits"];
+   
+     console.log(fruits);
+  for (const fruit of fruits) {
+    fruit.addEventListener("change", () => {// 모든 라디오에 이벤트 등록- change 또는 click 둘다 같은 기능임
+      let img = document.getElementById("img");
+      if (fruit.value == 1) {
+        img.src = "./image/banana.jpg"; 
+      } else if (fruit.value == 2) {
+        img.src = "./image/mango.jpg";
+      } else if (fruit.value == 3) {
+        img.src = "./image/apple.jpg";
+      }
+    });
+  }
+
+
+  function drawImage() {
+  let img1 = document.getElementById("img1");
+  let selectFruit = document.forms["select"].elements["fruit"];
+  img1.src = selectFruit.value;  // ✅ value가 이미 경로라서 바로 대입
+}
+let selectFruit = document.forms["select"].elements["fruit"];
+selectFruit.addEventListener("change", drawImage);
+  
+
+function calc(){
+  let price = document.getElementById("price");
+  price.value;
+}
+    </script>
+  </body>
+</html>

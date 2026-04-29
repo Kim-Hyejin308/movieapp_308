@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let callback = function () {
+        console.log("콜백");
+      };
+
+      console.log(callback);
+      callback();
+
+      function callTheOther(callback) {
+        let result = callback(10, 20);
+        console.log(result);
+      }
+      //   callTheOther(callOnce);
+
+      let add = (n1, n2) => n1 + n2;
+      callTheOther(add);
+
+      let sub = (n1, n2) => n1 - n2;
+      callTheOther(sub);
+
+      let mul = (n1, n2) => n1 * n2;
+      callTheOther(mul);
+
+      let div = (n1, n2) => n1 / n2;
+      callTheOther(div);
+    </script>
+  </body>
+</html>

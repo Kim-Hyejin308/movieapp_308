@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      let counter = 0;
+      function increaseCount() {
+        counter++;
+        render();
+      }
+      function render() {
+        console.log("render 호출됨");
+        ReactDOM.render(
+          <>
+            <p>{counter}번 클릭했습니다</p>
+            <button onClick={increaseCount}>Click me</button>
+          </>,
+          root,
+        );
+      }
+      const p = () => <p>0번 클릭했습니다</p>;
+      const btn = <button onClick={increaseCount}>Click me</button>;
+      const app = () => (
+        <>
+          <p>{btn}</p>
+        </>
+      );
+
+      ReactDOM.render(app(), root);
+    </script>
+  </body>
+</html>

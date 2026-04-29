@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      //   function render() {
+      //     console.log("렌더 함수가 호출되었습니다.");
+      //     ReactDOM.render(<App />, root);
+      //   }
+
+      const App = () => {
+        const [counter, setCounter] = React.useState(0);
+        const [money, setMoney] = React.useState(0);
+        const onclick = () => {
+          setCounter(counter + 1);
+          console.log("counter state 변경되어 렌더함수 호출");
+          console.log(`counter=> ${counter},money=> ${money}`);
+        };
+        const onclick2 = () => {
+          setMoney(money + 10);
+          console.log("money state 변경되어 렌더함수 호출");
+          console.log(`counter=> ${counter},money=> ${money}`);
+        };
+        return (
+          <>
+            <p> {counter} 번 클릭했습니다.</p>
+            <p> {money} 원 증가했습니다.</p>
+            <button onClick={onclick}>click</button>
+            <button onClick={onclick2}>money click</button>
+          </>
+        );
+      };
+      console.log("렌더함수 호출");
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

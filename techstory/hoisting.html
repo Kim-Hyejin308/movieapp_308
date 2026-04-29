@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hoisting test</title>
+  </head>
+  <body>
+    <h3>hoisting</h3>
+    <script>
+      console.log(num1);
+      var num1; //undefined가 초기화됨
+
+      let str = "내이름은 '홍길동' 입니다.";
+      let str2 = '내이름은 "홍길동" 입니다.';
+      let str3 = "123";
+      let str4 = parseInt(str3);
+      let res = str4 / 33;
+      let res2 = 3 % 2;
+      let res3 = 23 + 35 + "abc"; // 23과 35를 더한뒤 문자열을 붙임
+      let res4 = "abc" + 23 + 35; //문자열이 됨
+      console.log(str, str2, str3, str4, res, res2, res3, res4);
+
+      let name = "홍길동";
+      if (name == "홍길동") {
+        console.log(name);
+      }
+      if (name <= "홍길순") {
+        console.log("홍길동 입니다");
+      }
+
+      printNum(10);
+      function printNum(num3) {
+        console.log(num3);
+      } //10 출력됨
+
+      let num4;
+      console.log(num4);
+
+      console.log(num2); //초기화 되지 않음. Uncaught ReferenceError 초기화 하기 전엔 못써
+      let num2 = 2;
+    </script>
+  </body>
+</html>

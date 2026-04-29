@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom tree</title>
+  </head>
+  <body>
+    <h3>DOM 객체 p</h3>
+    <hr />
+    <p
+      id="firstP"
+      style="color: red; background-color: yellow"
+      onclick="this.style.color = 'teal'"
+    >
+      이것은<span style="color: red">문장입니다</span>
+    </p>
+    <p id="secondP"></p>
+    <p id="thirdP">
+      이건 어쩌구 <span>저건</span>어쩌구 이건 어쩌구 <span>저건</span>어쩌구
+      이건 어쩌구 <span>저건</span>어쩌구 이건 어쩌구 <span>저건</span>어쩌구
+      이건 어쩌구 <span>저건</span>어쩌구 이건 어쩌구 <span>저건</span>어쩌구
+      이건 어쩌구 <span>저건</span>어쩌구
+    </p>
+    <script>
+      const secondP = document.getElementById("secondP");
+      secondP.style.color = "red";
+      secondP.style.backgroundColor = "yellow";
+      secondP.innerHTML = '이것은<span style="color: red">문장입니다</span>';
+      secondP.onclick = function () {
+        secondP.style.color = "teal";
+      };
+
+      let thirdP = document.getElementById("thirdP");
+      console.log(thirdP.childElementCount);
+      let span = document.getElementsByTagName("span");
+      let spanCollection = document.querySelectorAll("#thirdP>span");
+      console.log(spanCollection);
+      for (const span of spanCollection) {
+        span.style.color = "violet";
+      }
+    </script>
+  </body>
+</html>

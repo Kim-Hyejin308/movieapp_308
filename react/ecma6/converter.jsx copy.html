@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      const Timeconverter = () => {
+        const [minutes, setMinutes] = React.useState(0);
+        const [hours, setHours] = React.useState(0);
+        const [dir, setDir] = React.useState(true);
+
+        const onchange = (e) => {
+          // console.log(e.target, e.target.value);
+          dir ? setMinutes(e.target.value) : setHours(e.target.value);
+        };
+
+        const onclick = () => {
+          setMinutes(0);
+          setHours(0);
+        };
+
+        const toggle = () => {
+          onclick();
+          setDir(!dir);
+        };
+
+        return (
+          <>
+            <form>
+              <p>{dir}</p>
+              <label htmlFor="minutes">분 </label>
+
+              <input
+                id="minutes"
+                type="number"
+                placeholder="분"
+                value={dir ? minutes : hours * 60}
+                onChange={onchange}
+                disabled={dir ? false : true}
+              />
+
+              <label htmlFor="hours"> 시간 </label>
+
+              <input
+                id="hours"
+                type="number"
+                placeholder="시간"
+                value={dir ? Math.floor(minutes / 60) : hours}
+                disabled={dir ? true : false}
+                onChange={onchange}
+              />
+            </form>
+
+            <button onClick={onclick}>reset</button>
+            <button onClick={toggle}>
+              {dir ? "분을 시간으로" : "시간을 분으로"} 변경
+            </button>
+          </>
+        );
+      };
+
+      const Currencyconverter = () => {
+        const [minutes, setMinutes] = React.useState(0);
+        const [hours, setHours] = React.useState(0);
+        const [dir, setDir] = React.useState(true);
+
+        const onchange = (e) => {
+          // console.log(e.target, e.target.value);
+          dir ? setMinutes(e.target.value) : setHours(e.target.value);
+        };
+
+        const onclick = () => {
+          setMinutes(0);
+          setHours(0);
+        };
+
+        const toggle = () => {
+          onclick();
+          setDir(!dir);
+        };
+
+        return (
+          <>
+            <form>
+              <p>{dir}</p>
+              <label htmlFor="minutes">원 </label>
+
+              <input
+                id="minutes"
+                type="number"
+                placeholder="원"
+                value={dir ? minutes : hours * 60}
+                onChange={onchange}
+                disabled={dir ? false : true}
+              />
+
+              <label htmlFor="hours"> 달러 </label>
+
+              <input
+                id="hours"
+                type="number"
+                placeholder="달러"
+                value={dir ? Math.floor(minutes / 60) : hours}
+                disabled={dir ? true : false}
+                onChange={onchange}
+              />
+            </form>
+
+            <button onClick={onclick}>reset</button>
+            <button onClick={toggle}>
+              {dir ? "원을 달러로" : "달러를 원으로"} 변경
+            </button>
+          </>
+        );
+      };
+
+      function App() {
+        const [index, setIndex] = React.useState(0);
+        const onChange = (e) => {
+          setIndex(e.target.value);
+        };
+        return (
+          <>
+            <h1>converter</h1>
+            <select name={index} id={onChange}>
+              <option value="0">옵션을 선택하세요</option>
+              <option value="1" Timeconverter>
+                시간 변환기
+              </option>
+              <option value="2" Currencyconverter>
+                화폐 변환기
+              </option>
+            </select>
+            <hr />
+            {index == 0 ? "변환할 단위를 선택하세요" : null}
+            {index == 1 ? <Timeconverter /> : null}
+            {index == 2 ? <Currencyconverter /> : null}
+          </>
+        );
+      }
+      console.log("렌더함수 호출");
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>

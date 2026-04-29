@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="container"></ul>
+    <button id="btn">클릭</button>
+    <script>
+      let counter = 0;
+      //button 객체를 가져온다.
+      const button = document.getElementById("btn");
+      //button 객체의 속성을 변경(onclick)
+      function addlist() {
+        const container = document.getElementById("container");
+        const child = document.createElement("li");
+        child.innerHTML = "새로 생성된 리스트 엘리먼트입니다." + counter++;
+        container.appendChild(child);
+      }
+      utton.onclick;
+      //id가 container인 객체를 가져와서(부모) 자식객체 li를 생성한 후 dom tree에 추가한다.
+      button.onclick = () => {
+        const container = document.getElementById("container");
+        const child = document.createElement("li");
+        child.innerHTML = "새로 생성된 리스트 엘리먼트입니다." + counter++;
+        container.appendChild(child);
+      };
+    </script>
+  </body>
+</html>

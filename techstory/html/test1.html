@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 페이지의 구성요소</title>
+    <link rel="stylesheet" href="./css/mystyle.css" />
+
+    <style>
+      @import url(./css/mystyle.css);
+      body {
+        background-color: linen;
+        color: green;
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
+      h3 {
+        text-align: center;
+        color: darkred;
+      }
+      hr {
+        height: 5px;
+        border: solid grey;
+        background-color: grey;
+      }
+      span {
+        color: blue;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      /*btn 객체가 아직 만들어지지 않은 상태에서 호출
+      const button = document.getElementById("btn");
+      btn.addEventListener("click", show);*/
+
+      function show() {
+        // <img>에 이미지 달기
+        document.getElementById("fig").src = "tim.jpg";
+        document.getElementById("fig2").src = "tim2.jpg";
+      }
+      function hide() {
+        // <img>에 이미지 제거
+        document.getElementById("fig").src = "";
+        document.getElementById("fig2").src = "";
+      }
+    </script>
+  </head>
+  <body>
+    <h3 onmouseover="show()" onmouseout="hide()">팀 버너스리</h3>
+    <hr />
+    <button id="btn">클릭하세요</button>
+    <img
+      id="fig"
+      src="tim.jpg"
+      alt="팀 버너스리"
+      width="120px"
+      height="160px"
+    />
+    <img
+      id="fig2"
+      src="tim2.jpg"
+      alt="팀 버너스리2"
+      width="140px"
+      height="160px"
+    />
+    <div>
+      팀 버너스리 경(영어: Sir Tim Berners-Lee, OM, KBE, FRS, 1955년 6월 8일 ~
+      )은 영국의 컴퓨터 과학자이다. 1989년 월드 와이드 웹의 하이퍼텍스트
+      시스템을 고안하여 개발했다. 인터넷의 기반을 닦은 여러 공로로 웹의
+      아버지라고 불리는 인물 중 하나이다.<span
+        ><strong>URL, HTTP, HTML</strong></span
+      >
+      최초 설계와 구현도 CERN 시절에 동료였던 로베르 카이오(Robert Cailliau)
+      등과 함께 그가 주도한 것이다. 차세대 웹 기술인
+      <span><u>시맨틱 웹</u></span> 기술의 표준화에 힘쏟고 있다.
+    </div>
+
+    <script>
+      const button = document.getElementById("btn");
+      btn.addEventListener("click", show);
+    </script>
+  </body>
+</html>

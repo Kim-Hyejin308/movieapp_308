@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class Hello extends React.Component {
+        render() {
+          return React.createElement("div", null, `Hello${this.props.what}`);
+        }
+      }
+      class Hello2 extends React.Component {
+        render() {
+          return <div>Hello{this.props.what}</div>;
+        }
+      }
+
+      function Hello3() {
+        const name = "hello, world";
+        return (
+          <>
+            <ul>
+              <li>{name}</li>
+              <li>{name}</li>
+            </ul>
+          </>
+        );
+      }
+
+      const style = {
+        backgroundColor: "black",
+        color: "white",
+      };
+
+      const e = React.createElement(
+        "h1",
+        { className: "hello" },
+        "Hello, world",
+      );
+      const e2 = (
+        <h1 className="hello" style={style}>
+          Hello, <u>world</u>
+        </h1>
+      );
+
+      let root = document.getElementById("root");
+
+      // ReactDOM.render(
+      //   React.createElement(Hello, { what: "world"},null), root);
+
+      ReactDOM.render(e2, root);
+    </script>
+  </body>
+</html>

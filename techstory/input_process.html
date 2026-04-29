@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--사용자로부터 숫자를 1개 입력받아, 10을 더하기-->
+    <input type="text" id="t1" />
+    <button onclick="calc()">OK</button>
+    <p id="result"></p>
+    <script>
+      function calc() {
+        let n1 = Number(document.getElementById("t1").value);
+        let n2 = parseInt(n1);
+        let n3 = 10 + n2;
+        console.log(n3);
+      }
+    </script>
+    <!--2~9까지 숫자를 하나 입력 받아 구구단을 출력-->
+    <input type="text" id="num" />
+    <button onclick="googoo()">OK</button>
+    <p id="res"></p>
+    <script>
+      function googoo() {
+        let r1 = parseInt(document.getElementById("num").value);
+
+        if (r1 >= 2 && r1 <= 9) {
+          console.log(
+            1 * r1,
+            2 * r1,
+            3 * r1,
+            4 * r1,
+            5 * r1,
+            6 * r1,
+            7 * r1,
+            8 * r1,
+            9 * r1,
+          );
+        } else {
+          console.log("2~9 사이 숫자를 입력하세요!");
+        }
+      }
+    </script>
+  </body>
+</html>

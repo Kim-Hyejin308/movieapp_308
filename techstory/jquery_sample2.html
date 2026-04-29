@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(() => {
+        $("#header").css("color", "red");
+      }); //이렇게 작성하던가, 아니면 id가 header인 코드가 실행이 끝나고 나서 작성
+
+      //또는 아래와 같이 작성
+
+      $(() => {
+        $("#header").css("color", "blue");
+      });
+    </script>
+
+    <h1 id="header">jQuery</h1>
+    <p>시발</p>
+    <p>시발</p>
+    <p>시발</p>
+    <p>시발</p>
+    <p>시발</p>
+    <button>씨~발</button>
+
+    <script>
+      $(document).ready(() => {
+        $("button").click(function () {
+          $("p").hide();
+        });
+      });
+      //   window.jQuery();
+      //   jQuery();
+      //   $(document);
+      //   $("h1");
+      //   $("<h1></h1>");
+    </script>
+  </body>
+</html>

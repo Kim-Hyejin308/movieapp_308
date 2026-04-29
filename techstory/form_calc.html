@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input:focus {
+        background-color: aqua;
+      }
+    </style>
+    <script>
+      function calc(e) {
+        e.preventDefault();
+        const expr = document.getElementById("expr");
+        // const result1 = document.getElementById("result1");
+        const result2 = document.getElementById("result2");
+        // result1.value = eval(expr.value);
+        result2.value = eval(expr.value);
+      }
+    </script>
+  </head>
+  <body>
+    <form action="#" method="get" onsubmit="calc(event)">
+      식 <input type="text" placeholder="식을 입력하세요" id="expr" />
+      <input type="submit" />
+      <!-- <br /> -->
+      <!-- 결과1 <input type="text" name="res1" id="result1" readonly />  -->
+      <br />
+      결과2 <input type="text" name="res2" id="result2" disabled />
+    </form>
+  </body>
+</html>
