@@ -23,7 +23,6 @@ Movie.propTypes = {
   id: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  jangre: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Movie;
