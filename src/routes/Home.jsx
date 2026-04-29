@@ -8,7 +8,7 @@ function Home() {
   const getMovies = async () => {
     try {
       console.log("영화 데이터 가져오는 중...");
-      const response = await fetch("http://localhost:3000/movies");
+      const response = await fetch("./db.json");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
