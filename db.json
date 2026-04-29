@@ -4,15 +4,15 @@
       "id": "1",
       "title": "왕과 사는 남자",
       "director": "장항준",
-      "casting": ["박지훈", "유해진", "유지태", "전미도"],
-      "jangre": ["드라마"],
+      "casting": ["박지훈, ", "유해진, ", "유지태, ", "전미도"],
+      "jangre": ["드라마, ", "사극"],
       "poster": "https://image.cine21.com/resize/cine21/poster/2026/0204/15_31_19__6982e7b7adfbb[X280,400].jpg"
     },
     {
       "id": "2",
       "title": "살목지",
       "director": "이상민",
-      "casting": ["김혜윤", "장다아", "이종원", "김준한"],
+      "casting": ["김혜윤, ", "장다아, ", "이종원, ", "김준한"],
       "jangre": ["공포"],
       "poster": "https://image.cine21.com/resize/cine21/poster/2026/0317/09_48_34__69b8a4e27933e[X280,400].jpg"
     },
@@ -20,7 +20,12 @@
       "id": "3",
       "title": "어벤져스: 에이지 오브 울트론",
       "director": "조스 웨돈",
-      "casting": ["로버트 다우니 주니어", "크리스 에반스", "크리스 헴스워스", "스칼렛 요한슨"],
+      "casting": [
+        "로버트 다우니 주니어, ",
+        "크리스 에반스, ",
+        "크리스 헴스워스, ",
+        "스칼렛 요한슨"
+      ],
       "jangre": ["액션"],
       "poster": "https://image.cine21.com/resize/cine21/poster/2015/0324/11_03_36__5510c5f8e0231[X280,400].jpg"
     }
