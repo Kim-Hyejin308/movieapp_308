@@ -28,7 +28,6 @@ function Home() {
             <Movie
               id={data.id}
               poster={data.poster}
-              jangre={data.jangre}
               title={data.title}
             />
           </div>
