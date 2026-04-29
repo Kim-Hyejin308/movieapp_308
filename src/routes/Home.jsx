@@ -6,20 +6,10 @@ function Home() {
   const [datas, setDatas] = useState([]);
 
   const getMovies = async () => {
-    try {
-      console.log("영화 데이터 가져오는 중...");
-      const response = await fetch("./db.json");
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const json = await response.json();
-      console.log("가져온 데이터:", json);
-      setDatas(json);
-      setIsLoading(false);
-    } catch (error) {
-      console.error("데이터 가져오기 오류:", error);
-      setIsLoading(false);
-    }
+    const response = await fetch(`${import.meta.env.BASE_URL}db.json`);
+    const json = await response.json();
+    setDatas(json.movies ?? []);
+    setIsLoading(false);
   };
 
   // 서버로부터 데이터 딱 한번만 가져오기
@@ -38,7 +28,7 @@ function Home() {
             <Movie
               id={data.id}
               poster={data.poster}
-              genres={data.jangre}
+              genres={data.genres}
               title={data.title}
             />
           </div>
