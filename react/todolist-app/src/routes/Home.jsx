@@ -19,18 +19,13 @@ function Home() {
 
   return (
     <>
-      <h1>Movie json-server API</h1>
+      <h1>Movie json server API</h1>
       <hr />
       {isLoading ? <p>IsLoading...</p> : null}
       <div>
         {datas.map((data) => (
           <div key={data.id}>
-            <Movie
-              id={data.id}
-              poster={data.poster}
-              jangre={data.jangre}
-              title={data.title}
-            />
+            <Movie id={data.id} poster={data.poster} title={data.title} />
           </div>
         ))}
       </div>

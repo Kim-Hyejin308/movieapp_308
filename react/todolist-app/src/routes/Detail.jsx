@@ -19,7 +19,9 @@ function Detail() {
       <h1>영화 정보 상세 보기</h1>
       <h3>{movie.title}</h3>
       <img src={movie.poster} alt="poster" />
-      <p>{movie.director}</p>
+      <p>감독 : {movie.director}</p>
+      <p>출연 : {movie.casting}</p>
+      <p>장르 : {movie.jangre}</p>
     </div>
   );
 }
