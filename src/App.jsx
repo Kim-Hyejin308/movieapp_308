@@ -4,7 +4,7 @@ import Detail from "./routes/Detail";
 
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
@@ -12,5 +12,3 @@ function App() {
     </Routes>
   );
 }
-
-export default App;
