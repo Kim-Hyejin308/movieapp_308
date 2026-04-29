@@ -11,8 +11,13 @@ import "./App.css";
     gender: "male"
   }
   return (
+    <>
 <h1>학생정보</h1>
 <hr/>
-<p>{student}</p>
+<p>아이디 : {student.id}</p>
+<p>이름 : {student.name}</p>
+<p>나이 : {student.age}</p>
+<p>성별 : {student.gender}</p>
+</>
   )
 }
